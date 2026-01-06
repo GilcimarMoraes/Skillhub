@@ -27,9 +27,7 @@ public class ServicoOferecidos {
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
-    @ManyToOne
-    @JoinColumn( name = "servico_id" )
-    private Servico servico;
+    private String ativo;
 
     private String descricao;
 
@@ -41,9 +39,9 @@ public class ServicoOferecidos {
     @JoinColumn( name = "usuario_id" )
     private Usuario usuario;
 
-    private String descricao;
-
-    private Boolean ativo;
+    @ManyToOne
+    @JoinColumn( name = "servico_id" )
+    private Servico servico;
 
     @Timestamp
     private LocalDate dataCriacao;

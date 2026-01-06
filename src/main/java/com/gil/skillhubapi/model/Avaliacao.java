@@ -1,9 +1,6 @@
 package com.gil.skillhubapi.model;
 
-import com.gil.skillhubapi.enums.StatusSolicitacao;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,33 +11,33 @@ import jdk.jfr.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.mapping.Join;
 
 import java.time.LocalDate;
 
 @Entity
-@Table( name = "solicitacao_servico", schema = "skillhub" )
+@Table( name = "avaliacoes", schema = "skillhub" )
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class SolicitacaoServico {
+public class Avaliacao {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
     @ManyToOne
-    @JoinColumn( name = "usuario_solicitante_id" )
-    private Usuario usarioSolicitante;
+    @JoinColumn( name = "solicitacao_servico_id" )
+    private SolicitacaoServico solicitacaoServico;
 
     @ManyToOne
-    @JoinColumn( name = "usuario_prestador_id" )
-    private Usuario usuarioPrestador;
+    @JoinColumn( name = "usuario_avaliador_id" )
+    private Usuario usarioAvaliador;
 
-    @Enumerated( EnumType.STRING )
-    private StatusSolicitacao status;
+    private Integer nota;
+
+    private String comentario;
 
     @Timestamp
     private LocalDate dataCriacao;
-
-    private LocalDate dataRealizacao;
 }
