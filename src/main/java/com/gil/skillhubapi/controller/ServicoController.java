@@ -1,7 +1,7 @@
 package com.gil.skillhubapi.controller;
 
-import com.gil.skillhubapi.model.Avaliacao;
-import com.gil.skillhubapi.service.AvaliacaoService;
+import com.gil.skillhubapi.model.Servico;
+import com.gil.skillhubapi.service.ServicoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,32 +17,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Tag( name = "Avaliações" )
+@Tag( name = "Servicos" )
 @RestController
-@RequestMapping( "/avaliacoes" )
 @RequiredArgsConstructor
-public class AvaliacaoController {
+@RequestMapping( "/servicos" )
+public class ServicoController {
 
-    private final AvaliacaoService avaliacaoService;
+    private final ServicoService servicoService;
 
     @GetMapping
-    public ResponseEntity<List<Avaliacao>> findAll() {
-        return ResponseEntity.ok( avaliacaoService.findAll() );
+    public ResponseEntity<List<Servico>> findAll() {
+        return ResponseEntity.ok( servicoService.findAll() );
     }
 
-    @GetMapping( "/{id}" )
-    public ResponseEntity<Avaliacao> findById( @PathVariable Long id ) {
-        return ResponseEntity.ok( avaliacaoService.findById( id ) );
+    @GetMapping( "/{id}")
+    public ResponseEntity<Servico> findById( @PathVariable Long id) {
+        return ResponseEntity.ok( servicoService.findById( id ));
     }
 
+    @ResponseStatus( HttpStatus.CREATED )
     @PostMapping
-    public ResponseEntity<Avaliacao> save( @RequestBody Avaliacao avaliacao ) {
-        return ResponseEntity.status(HttpStatus.CREATED).body( avaliacaoService.save( avaliacao ) );
+    public ResponseEntity<Servico> save( @RequestBody Servico servico ) {
+        return ResponseEntity.status(HttpStatus.CREATED).body( servicoService.save( servico ) );
     }
 
     @ResponseStatus( HttpStatus.NO_CONTENT )
-    @DeleteMapping( "/{id}")
+    @DeleteMapping( "/{id}" )
     public void delete( @PathVariable Long id ) {
-        avaliacaoService.delete( id );
+        servicoService.delete( id );
     }
 }
