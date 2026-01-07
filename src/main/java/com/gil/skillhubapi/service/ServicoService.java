@@ -1,6 +1,6 @@
 package com.gil.skillhubapi.service;
 
-import com.gil.skillhubapi.model.Servico;
+import com.gil.skillhubapi.entity.Servico;
 import com.gil.skillhubapi.repository.ServicoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

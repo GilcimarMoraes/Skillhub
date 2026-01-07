@@ -1,4 +1,4 @@
-package com.gil.skillhubapi.model;
+package com.gil.skillhubapi.entity;
 
 import com.gil.skillhubapi.enums.StatusSolicitacao;
 import jakarta.persistence.Entity;
@@ -10,10 +10,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jdk.jfr.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 
@@ -30,7 +30,7 @@ public class SolicitacaoServico {
 
     @ManyToOne
     @JoinColumn( name = "usuario_solicitante_id" )
-    private Usuario usarioSolicitante;
+    private Usuario usuarioSolicitante;
 
     @ManyToOne
     @JoinColumn( name = "usuario_prestador_id" )
@@ -39,7 +39,7 @@ public class SolicitacaoServico {
     @Enumerated( EnumType.STRING )
     private StatusSolicitacao status;
 
-    @Timestamp
+    @CreationTimestamp
     private LocalDate dataCriacao;
 
     private LocalDate dataRealizacao;

@@ -1,6 +1,6 @@
 package com.gil.skillhubapi.controller;
 
-import com.gil.skillhubapi.model.Servico;
+import com.gil.skillhubapi.entity.Servico;
 import com.gil.skillhubapi.service.ServicoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

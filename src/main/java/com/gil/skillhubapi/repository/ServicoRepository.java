@@ -1,6 +1,6 @@
 package com.gil.skillhubapi.repository;
 
-import com.gil.skillhubapi.model.Servico;
+import com.gil.skillhubapi.entity.Servico;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,14 +1,14 @@
-package com.gil.skillhubapi.model;
+package com.gil.skillhubapi.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jdk.jfr.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
@@ -28,7 +28,7 @@ public class Servico {
     private String descricao;
     private Boolean ativo;
 
-    @Timestamp
+    @CreationTimestamp
     private LocalDate dataCriacao;
 
     @UpdateTimestamp

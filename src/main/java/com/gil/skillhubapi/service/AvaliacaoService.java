@@ -1,6 +1,6 @@
 package com.gil.skillhubapi.service;
 
-import com.gil.skillhubapi.model.Avaliacao;
+import com.gil.skillhubapi.entity.Avaliacao;
 import com.gil.skillhubapi.repository.AvaliacaoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

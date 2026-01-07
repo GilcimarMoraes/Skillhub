@@ -1,6 +1,6 @@
 package com.gil.skillhubapi.controller;
 
-import com.gil.skillhubapi.model.Avaliacao;
+import com.gil.skillhubapi.entity.Avaliacao;
 import com.gil.skillhubapi.service.AvaliacaoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
