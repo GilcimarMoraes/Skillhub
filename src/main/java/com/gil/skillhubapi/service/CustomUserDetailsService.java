@@ -1,6 +1,7 @@
 package com.gil.skillhubapi.service;
 
 import com.gil.skillhubapi.entity.Usuario;
+import com.gil.skillhubapi.security.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,6 +22,6 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException( "User not found" );
         }
 
-        return new CustomUserDetailsService( usuario );
+        return new CustomUserDetails( usuario );
     }
 }
