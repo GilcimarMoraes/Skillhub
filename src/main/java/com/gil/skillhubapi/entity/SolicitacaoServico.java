@@ -36,6 +36,10 @@ public class SolicitacaoServico {
     @JoinColumn( name = "usuario_prestador_id" )
     private Usuario usuarioPrestador;
 
+    @ManyToOne
+    @JoinColumn( name = "servico_oferecido_id")
+    private ServicoOferecido servicoOferecido;
+
     @Enumerated( EnumType.STRING )
     private StatusSolicitacao status;
 
