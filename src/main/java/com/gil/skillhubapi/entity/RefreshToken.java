@@ -1,6 +1,5 @@
 package com.gil.skillhubapi.entity;
 
-import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,10 +10,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
-@Table( name = "refresh_tokens" )
+@Table( name = "refresh_tokens", schema = "skillhub")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -29,7 +28,7 @@ public class RefreshToken {
     @Column( nullable = false, unique = true )
     private String token;
 
-    private LocalDate expiryDate;
+    private LocalDateTime expiryDate;
 
     private Boolean revoked;
 }
